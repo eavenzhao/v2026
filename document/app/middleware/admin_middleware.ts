@@ -9,14 +9,14 @@ export default class AdminMiddleware {
      * Middleware logic goes here (before the next call)
      */
     const user = await ctx.auth.authenticate()
+
     if (user.role !== Role.ADMIN) {
       throw new Exception('你不是管理员', {
         code: 'E_UNAUTHORIZED_ACCESS',
         status: 403,
       })
     }
-    // console.log(user.toJSON());
-    // console.log('admin middleware')
+
     /**
      * Call next method in the pipeline and return its output
      */
