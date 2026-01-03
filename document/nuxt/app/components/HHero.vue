@@ -1,0 +1,34 @@
+<script setup lang="ts">
+import type { ButtonProps } from '@nuxt/ui'
+
+const links = ref<ButtonProps[]>([
+  {
+    label: '视频教程',
+    to: '/docs/getting-started',
+    icon: 'i-lucide-square-play'
+  },
+  {
+    label: '晚八点直播',
+    to: '/docs/getting-started/theme/design-system',
+    color: 'neutral',
+    variant: 'subtle',
+    trailingIcon: 'i-lucide-arrow-right'
+  }
+])
+</script>
+
+<template>
+  <UPageHero
+    title="后盾人编程"
+    description="后盾人编程是一个专注于 Vue 技术的编程学习平台，提供 Vue 相关的课程和教程。"
+    headline="v1.0"
+    orientation="horizontal"
+    :links="links"
+  >
+    <img
+      src="/images/xj-big.jpg"
+      alt="App screenshot"
+      class="rounded-lg shadow-2xl ring ring-default"
+    >
+  </UPageHero>
+</template>
